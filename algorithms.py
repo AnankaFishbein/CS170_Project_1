@@ -36,58 +36,72 @@ class PuzzleSolver:
         expanded_nodes = 0
         max_queue_size = 1
 
-        while open_heap:
+        with open("output.txt", "w") as f:
+            while open_heap:
             #pop the current lowest h(n) node
-            temp = heapq.heappop(open_heap)
-            current_priority = temp[0]
-            #skip temp[1], it's unused value
-            current_state = temp[2]
-            current_g = temp[3]
-            expanded_nodes += 1
+                temp = heapq.heappop(open_heap)
+                current_priority = temp[0]
+                #skip temp[1], it's unused value
+                current_state = temp[2]
+                current_g = temp[3]
+                expanded_nodes += 1
 
-            #if found goal state already, backtrack:
-            if current_state == self.goal:
-                path = []
-                state = current_state
-                while True:
-                    entry = visited.get(state)
-                    if entry is None:
-                        break
-                    g, parent, operator = entry #consistent format
-                    if operator is not None:
-                        path.append(operator)
-                    state = parent #go back up one level
-                path.reverse() #reverse to correct sequence
-                return {
-                    "path": path,
-                    "expanded_nodes": expanded_nodes,
-                    "max_queue_size": max_queue_size,
-                    "depth": len(path)
-                }
-            
-            #if not goal yet. generator all sucessors
-            successors = get_successors(current_state, self.n)
-            for next_state, operator in successors:
-                new_g = current_g + 1 #uniform cost of 1
-
-                #if found lower cost path, update:
-                if next_state in visited:
-                    existing_g, _, _ = visited[next_state] # bad readability
-                    if new_g >= existing_g:
-                        continue #skip since find a better path
-                
-                #calculate priority (Uniform Cost=g, A*=g+h)
+                #  # Print the current state, g, and h values
+                # if self.heuristic is not None:
+                #     current_h = self.heuristic(current_state, self.goal, self.n)
+                # else:
+                #     current_h = 0
+                #     print(f"Current state: {current_state}, g: {current_g}, h: {current_h}")
+                # Print the current state, g, and h values
                 if self.heuristic is not None:
-                    next_h = self.heuristic(next_state, self.goal, self.n)
+                    current_h = self.heuristic(current_state, self.goal, self.n)
                 else:
-                    next_h = 0
-                new_priority = new_g + next_h
+                    current_h = 0
+                f.write(f"Current state: {current_state}, g: {current_g}, h: {current_h}\n")
 
-                #add to the peiority queue
-                heapq.heappush(open_heap, (new_priority, counter, next_state, new_g))
-                counter += 1
-                visited[next_state] = (new_g, current_state, operator) # consistent formatting
-                max_queue_size = max(max_queue_size, len(open_heap))
+                #if found goal state already, backtrack:
+                if current_state == self.goal:
+                    path = []
+                    state = current_state
+                    while True:
+                        entry = visited.get(state)
+                        if entry is None:
+                            break
+                        g, parent, operator = entry #consistent format
+                        if operator is not None:
+                            path.append(operator)
+                        state = parent #go back up one level
+                    path.reverse() #reverse to correct sequence
+                    return {
+                        "path": path,
+                        "expanded_nodes": expanded_nodes,
+                        "max_queue_size": max_queue_size,
+                        "depth": len(path)
+                    }
+                
+                #if not goal yet. generator all sucessors
+                successors = get_successors(current_state, self.n)
+                for next_state, operator in successors:
+                    new_g = current_g + 1 #uniform cost of 1
+
+                    #if found lower cost path, update:
+                    if next_state in visited:
+                        existing_g, _, _ = visited[next_state] # bad readability
+                        if new_g >= existing_g:
+                            continue #skip since find a better path
+                    
+                    #calculate priority (Uniform Cost=g, A*=g+h)
+                    if self.heuristic is not None:
+                        next_h = self.heuristic(next_state, self.goal, self.n)
+                    else:
+                        next_h = 0
+                    new_priority = new_g + next_h
+
+                    #add to the peiority queue
+                    heapq.heappush(open_heap, (new_priority, counter, next_state, new_g))
+                    counter += 1
+                    visited[next_state] = (new_g, current_state, operator) # consistent formatting
+                    max_queue_size = max(max_queue_size, len(open_heap))
 
         return None #no solution found
 
