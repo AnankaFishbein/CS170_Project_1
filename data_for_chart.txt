@@ -1,0 +1,192 @@
+======= Testing case_depth_0 ======
+Initial State: (1, 2, 3, 4, 5, 6, 7, 8, 0)
+Goal State: (1, 2, 3, 4, 5, 6, 7, 8, 0)
+
+ testing Uniform Cost Search
+UCS found solution with depth 0
+Expanded Nodes: 1
+Max Queue Size: 1
+Actual path length: 0, Expected path length: 0
+Path: []
+
+ testing A* with Misplaced Tiles
+A* Misplaced found solution with depth 0
+Expanded Nodes: 1
+Max Queue Size: 1
+Actual path length: 0, Expected path length: 0
+Path: []
+
+ testing A* with Manhattan Distance
+A* Manhattan found solution with depth 0
+Expanded Nodes: 1
+Max Queue Size: 1
+Actual path length: 0, Expected path length: 0
+Path: []
+======= Testing case_depth_2 ======
+Initial State: (1, 2, 3, 4, 5, 6, 0, 7, 8)
+Goal State: (1, 2, 3, 4, 5, 6, 7, 8, 0)
+
+ testing Uniform Cost Search
+UCS found solution with depth 2
+Expanded Nodes: 7
+Max Queue Size: 8
+Actual path length: 2, Expected path length: 2
+Path: ['Right', 'Right']
+
+ testing A* with Misplaced Tiles
+A* Misplaced found solution with depth 2
+Expanded Nodes: 3
+Max Queue Size: 3
+Actual path length: 2, Expected path length: 2
+Path: ['Right', 'Right']
+
+ testing A* with Manhattan Distance
+A* Manhattan found solution with depth 2
+Expanded Nodes: 3
+Max Queue Size: 3
+Actual path length: 2, Expected path length: 2
+Path: ['Right', 'Right']
+======= Testing case_depth_4 ======
+Initial State: (1, 2, 3, 5, 0, 6, 4, 7, 8)
+Goal State: (1, 2, 3, 4, 5, 6, 7, 8, 0)
+
+ testing Uniform Cost Search
+UCS found solution with depth 4
+Expanded Nodes: 33
+Max Queue Size: 28
+Actual path length: 4, Expected path length: 4
+Path: ['Left', 'Down', 'Right', 'Right']
+
+ testing A* with Misplaced Tiles
+A* Misplaced found solution with depth 4
+Expanded Nodes: 5
+Max Queue Size: 6
+Actual path length: 4, Expected path length: 4
+Path: ['Left', 'Down', 'Right', 'Right']
+
+ testing A* with Manhattan Distance
+A* Manhattan found solution with depth 4
+Expanded Nodes: 5
+Max Queue Size: 6
+Actual path length: 4, Expected path length: 4
+Path: ['Left', 'Down', 'Right', 'Right']
+======= Testing case_depth_8 ======
+Initial State: (1, 3, 6, 5, 0, 2, 4, 7, 8)
+Goal State: (1, 2, 3, 4, 5, 6, 7, 8, 0)
+
+ testing Uniform Cost Search
+UCS found solution with depth 8
+Expanded Nodes: 311
+Max Queue Size: 190
+Actual path length: 8, Expected path length: 8
+Path: ['Right', 'Up', 'Left', 'Down', 'Left', 'Down', 'Right', 'Right']
+
+ testing A* with Misplaced Tiles
+A* Misplaced found solution with depth 8
+Expanded Nodes: 19
+Max Queue Size: 16
+Actual path length: 8, Expected path length: 8
+Path: ['Right', 'Up', 'Left', 'Down', 'Left', 'Down', 'Right', 'Right']
+
+ testing A* with Manhattan Distance
+A* Manhattan found solution with depth 8
+Expanded Nodes: 13
+Max Queue Size: 12
+Actual path length: 8, Expected path length: 8
+Path: ['Right', 'Up', 'Left', 'Down', 'Left', 'Down', 'Right', 'Right']
+======= Testing case_depth_12 ======
+Initial State: (1, 3, 6, 5, 0, 7, 4, 8, 2)
+Goal State: (1, 2, 3, 4, 5, 6, 7, 8, 0)
+
+ testing Uniform Cost Search
+UCS found solution with depth 12
+Expanded Nodes: 2328
+Max Queue Size: 1280
+Actual path length: 12, Expected path length: 12
+Path: ['Right', 'Down', 'Left', 'Up', 'Right', 'Up', 'Left', 'Down', 'Left', 'Down', 'Right', 'Right']
+
+ testing A* with Misplaced Tiles
+A* Misplaced found solution with depth 12
+Expanded Nodes: 120
+Max Queue Size: 84
+Actual path length: 12, Expected path length: 12
+Path: ['Right', 'Down', 'Left', 'Up', 'Right', 'Up', 'Left', 'Down', 'Left', 'Down', 'Right', 'Right']
+
+ testing A* with Manhattan Distance
+A* Manhattan found solution with depth 12
+Expanded Nodes: 37
+Max Queue Size: 28
+Actual path length: 12, Expected path length: 12
+Path: ['Right', 'Down', 'Left', 'Up', 'Right', 'Up', 'Left', 'Down', 'Left', 'Down', 'Right', 'Right']
+======= Testing case_depth_16 ======
+Initial State: (1, 6, 7, 5, 0, 3, 4, 8, 2)
+Goal State: (1, 2, 3, 4, 5, 6, 7, 8, 0)
+
+ testing Uniform Cost Search
+UCS found solution with depth 16
+Expanded Nodes: 13710
+Max Queue Size: 6584
+Actual path length: 16, Expected path length: 16
+Path: ['Right', 'Up', 'Left', 'Down', 'Right', 'Down', 'Left', 'Up', 'Right', 'Up', 'Left', 'Down', 'Left', 'Down', 'Right', 'Right']
+
+ testing A* with Misplaced Tiles
+A* Misplaced found solution with depth 16
+Expanded Nodes: 668
+Max Queue Size: 414
+Actual path length: 16, Expected path length: 16
+Path: ['Right', 'Up', 'Left', 'Down', 'Right', 'Down', 'Left', 'Up', 'Right', 'Up', 'Left', 'Down', 'Left', 'Down', 'Right', 'Right']
+
+ testing A* with Manhattan Distance
+A* Manhattan found solution with depth 16
+Expanded Nodes: 97
+Max Queue Size: 64
+Actual path length: 16, Expected path length: 16
+Path: ['Right', 'Up', 'Left', 'Down', 'Right', 'Down', 'Left', 'Up', 'Right', 'Up', 'Left', 'Down', 'Left', 'Down', 'Right', 'Right']
+======= Testing case_depth_20 ======
+Initial State: (7, 1, 2, 4, 8, 5, 6, 3, 0)
+Goal State: (1, 2, 3, 4, 5, 6, 7, 8, 0)
+
+ testing Uniform Cost Search
+UCS found solution with depth 20
+Expanded Nodes: 54666
+Max Queue Size: 17289
+Actual path length: 20, Expected path length: 20
+Path: ['Left', 'Left', 'Up', 'Right', 'Right', 'Down', 'Left', 'Left', 'Up', 'Up', 'Right', 'Down', 'Down', 'Left', 'Up', 'Right', 'Up', 'Right', 'Down', 'Down']
+
+ testing A* with Misplaced Tiles
+A* Misplaced found solution with depth 20
+Expanded Nodes: 3148
+Max Queue Size: 1833
+Actual path length: 20, Expected path length: 20
+Path: ['Left', 'Left', 'Up', 'Right', 'Right', 'Down', 'Left', 'Left', 'Up', 'Up', 'Right', 'Right', 'Down', 'Left', 'Down', 'Left', 'Up', 'Right', 'Right', 'Down']
+
+ testing A* with Manhattan Distance
+A* Manhattan found solution with depth 20
+Expanded Nodes: 501
+Max Queue Size: 313
+Actual path length: 20, Expected path length: 20
+Path: ['Left', 'Left', 'Up', 'Right', 'Right', 'Down', 'Left', 'Left', 'Up', 'Up', 'Right', 'Right', 'Down', 'Left', 'Down', 'Left', 'Up', 'Right', 'Right', 'Down']
+======= Testing case_depth_24 ======
+Initial State: (0, 7, 2, 4, 6, 1, 3, 5, 8)
+Goal State: (1, 2, 3, 4, 5, 6, 7, 8, 0)
+
+ testing Uniform Cost Search
+UCS found solution with depth 24
+Expanded Nodes: 135274
+Max Queue Size: 24048
+Actual path length: 24, Expected path length: 24
+Path: ['Right', 'Down', 'Left', 'Down', 'Right', 'Up', 'Right', 'Up', 'Left', 'Down', 'Left', 'Up', 'Right', 'Down', 'Down', 'Left', 'Up', 'Right', 'Right', 'Up', 'Left', 'Down', 'Down', 'Right']
+
+ testing A* with Misplaced Tiles
+A* Misplaced found solution with depth 24
+Expanded Nodes: 17778
+Max Queue Size: 8743
+Actual path length: 24, Expected path length: 24
+Path: ['Right', 'Down', 'Right', 'Up', 'Left', 'Down', 'Left', 'Down', 'Right', 'Up', 'Left', 'Up', 'Right', 'Down', 'Right', 'Up', 'Left', 'Down', 'Down', 'Left', 'Up', 'Right', 'Down', 'Right']
+
+ testing A* with Manhattan Distance
+A* Manhattan found solution with depth 24
+Expanded Nodes: 1766
+Max Queue Size: 993
+Actual path length: 24, Expected path length: 24
+Path: ['Right', 'Down', 'Right', 'Up', 'Left', 'Down', 'Left', 'Down', 'Right', 'Up', 'Left', 'Up', 'Right', 'Down', 'Down', 'Left', 'Up', 'Right', 'Right', 'Up', 'Left', 'Down', 'Down', 'Right']

@@ -1,0 +1,4 @@
+Current state: (1, 0, 3, 4, 2, 5, 7, 8, 6), g: 0, h: 3
+Current state: (1, 2, 3, 4, 0, 5, 7, 8, 6), g: 1, h: 2
+Current state: (1, 2, 3, 4, 5, 0, 7, 8, 6), g: 2, h: 1
+Current state: (1, 2, 3, 4, 5, 6, 7, 8, 0), g: 3, h: 0
