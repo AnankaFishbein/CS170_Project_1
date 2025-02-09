@@ -58,6 +58,12 @@ if __name__ == "__main__":
             "initial_state": (1, 2, 3, 4, 5, 0, 6, 7, 8),
             "n": 3,
             "expected_depth": 13
+        },
+        {
+            "name": "case_impossible",
+            "initial_state": (1, 2, 3, 4, 5, 6, 8, 7, 0),
+            "n": 3,
+            "expected_depth": None
         }
     ]
 
